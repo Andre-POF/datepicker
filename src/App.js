@@ -25,6 +25,8 @@ function App() {
           <Button variant="primary" type="submit">
             Hello world
           </Button>
+          <Button variant="primary" type="submit">
+            Ciao mondo          </Button>
         </div>
       </div>
     </Container>
