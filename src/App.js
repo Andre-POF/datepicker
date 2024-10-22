@@ -21,8 +21,11 @@ function App() {
           dateFormat="dd/MM/yyyy"
           placeholderText="Select a date.."
         />
-      </div>
-    </Container>
+        <div>
+          <Button variant="primary" type="submit"></Button>
+        </div>
+      </div >
+    </Container >
   );
 }
 
