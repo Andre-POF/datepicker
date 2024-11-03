@@ -16,13 +16,13 @@ app.get("/", (req, res) => {
 const initServer = async () => {
   try {
     await mongoose.connect(`${process.env.MONGO_URL}`);
-    console.log("Connected to Articoli DB");
+    console.log("Connected to mogngoDB");
 
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
   } catch (error) {
-    console.log(error, "No connection to Articoli DB");
+    console.log(error, "No connection to mogngoDB");
   }
 };
 
