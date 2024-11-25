@@ -1,33 +1,31 @@
-import "./App.css";
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "react-datepicker/dist/react-datepicker.css";
-import { Button, Container } from "react-bootstrap";
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-datepicker/dist/react-datepicker.css';
+import { it } from 'date-fns/locale';
+import { Container } from 'react-bootstrap';
+import './App.css';
 
 function App() {
-  const [selectedDate, setSelectedDate] = useState(Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    console.log(date);
   };
 
   return (
-    <Container className="d-flex justify-content-around align-items-center mt-5">
-      <div>
+    <Container className="d-flex justify-content-center align-items-center mt-5">
+      <div className="datepicker-container">
         <DatePicker
           selected={selectedDate}
           onChange={handleDateChange}
           dateFormat="dd/MM/yyyy"
-          placeholderText="Select a date.."
+          placeholderText="Select a date..."
+          locale={it}
+          onSelect={handleDateChange}
         />
-        <div>
-          <Button variant="primary" type="submit">
-            Hello world
-          </Button>
-          <Button variant="primary" type="submit">
-            Ciao mondo             </Button>
-        </div>
+
       </div>
     </Container>
   );
